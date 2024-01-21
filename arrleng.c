@@ -8,10 +8,10 @@
 //     return 0;
 // }
 #include<stdio.h>
-void arrlength(char arr[])
+void arrlength(char arr[1])
 {
     int i=0;
-    for(i=0;arr[i]!='\0',i++);
+    for(i=0;arr[i]!='\0';i++);
     return i;
 }
 int main()
