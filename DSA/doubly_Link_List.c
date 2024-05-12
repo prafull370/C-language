@@ -71,10 +71,10 @@ node* searching(node *head, int val) {
     return NULL; // Value not found
 }
 
-void insert_afer_elem(node *head, node **tail1, int val, int val1) {
+void insert_after_elem(node **head, node **tail1, int val, int val1) {
     node *temp, *loc;
     temp = (node *)malloc(sizeof(node));
-    loc = searching(head, val);
+    loc = searching(*head, val);
     if (temp == NULL) {
         printf("memory doesn't allocated\n");
         return;
@@ -93,7 +93,7 @@ void insert_afer_elem(node *head, node **tail1, int val, int val1) {
     }
 }
 
-void insert_before_elem(node **head1, node *tail, int val, int val1) {
+void insert_before_elem(node **head1, node **tail, int val, int val1) {
     node *temp, *loc;
     temp = (node *)malloc(sizeof(node));
     loc = searching(*head1, val);
@@ -208,18 +208,18 @@ int main() {
                 insert_end(&head, &tail, val);
                 break;
             case 3:
-                printf("enter before value : ");
+                printf("Enter after value : ");
                 scanf("%d", &val);
                 printf("enter value : ");
                 scanf("%d", &val1);
-                insert_afer_elem(head, &tail, val, val1);
+                insert_after_elem(&head, &tail, val, val1);
                 break;
             case 4:
-                printf("enter after value : ");
+                printf("Enter before value : ");
                 scanf("%d", &val);
                 printf("enter value : ");
                 scanf("%d", &val1);
-                insert_before_elem(&head, tail, val, val1);
+                insert_before_elem(&head, &tail, val, val1);
                 break;
             case 5:
                 delete_at_beg(&head, &tail);
@@ -235,7 +235,7 @@ int main() {
             case 8:
                 printf("enter value : ");
                 scanf("%d", &val);
-                delete_before_elem(&head, tail, val);
+                delete_before_elem(&head, val);
                 break;
             case 9:
                 traversing(head);

@@ -37,9 +37,34 @@ node *search(node *head,int srch){
     printf("No such value found");
     return NULL;
 }
+void insertend(node **head1, int v)
+{
+    node *temp, *loc;
+    temp = (node *)malloc(sizeof(node));
+    if (temp == NULL)
+    {
+        printf("unable to allocate memory");
+        return;
+    }
+    temp->info = v;
+    temp->next = NULL;
+    if (*head1 == NULL)
+    {
+        *head1 = temp;
+    }
+    else
+    {
+        loc = *head1;
+        while (loc->next != NULL)
+        {
+            loc = loc->next;
+        }
+        loc->next = temp;
+    }
+}
 void insert_after_element(node **head,int val,int srch){
     node *temp,*loc;
-    loc = search(*head,srch);
+    loc = search(head,srch);
     temp=(node *)malloc(sizeof(node));
     if(temp==NULL){
         printf("unable to allocate memory");
@@ -92,31 +117,6 @@ void dlt_list(node **head){
         temp=temp->next;
     }
     *head=NULL;
-}
-void insertend(node **head1, int v)
-{
-    node *temp, *loc;
-    temp = (node *)malloc(sizeof(node));
-    if (temp == NULL)
-    {
-        printf("unable to allocate memory");
-        return;
-    }
-    temp->info = v;
-    temp->next = NULL;
-    if (*head1 == NULL)
-    {
-        *head1 = temp;
-    }
-    else
-    {
-        loc = *head1;
-        while (loc->next != NULL)
-        {
-            loc = loc->next;
-        }
-        loc->next = temp;
-    }
 }
 int main()
 {
