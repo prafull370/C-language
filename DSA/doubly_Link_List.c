@@ -93,7 +93,7 @@ void insert_after_elem(node **head, node **tail1, int val, int val1) {
     }
 }
 
-void insert_before_elem(node **head1, node **tail, int val, int val1) {
+void insert_before_elem(node **head1, node ** tail, int val, int val1) {
     node *temp, *loc;
     temp = (node *)malloc(sizeof(node));
     loc = searching(*head1, val);
