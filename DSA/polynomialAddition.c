@@ -1,13 +1,13 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-struct Node {
+typedef struct Node {
     int coef;
     int exp;
     struct Node* next;
-};
+}Node;
 
-typedef struct Node Node;
+// typedef struct Node Node;
 
 void insert(Node** poly, int coef, int exp) {
     Node* temp = (Node*) malloc(sizeof(Node));
@@ -31,7 +31,7 @@ void insert(Node** poly, int coef, int exp) {
 
 void print(Node* poly) {
     if (poly == NULL) {
-        printf("0\n");
+        printf("NULL Polynomial\n");
         return;
     }
     
@@ -80,9 +80,12 @@ Node* add(Node* poly1, Node* poly2) {
 
 int main() {
     Node* poly1 = NULL;
-    insert(&poly1, 5, 4);
-    insert(&poly1, 3, 2);
-    insert(&poly1, 1, 0);
+    int n,m;
+    printf("Enter your polynomial.");
+    scanf("%d%d",&n,&m)
+    insert(&poly1, n, m);
+    insert(&poly1, n, m);
+    insert(&poly1, n, m);
 
     Node* poly2 = NULL;
     insert(&poly2, 4, 4);
