@@ -68,13 +68,14 @@ node* searching(node *head, int val) {
         }
         head = head->next;
     }
-    return NULL; // Value not found
+    return NULL;
 }
 
 void insert_after_elem(node **head, node **tail1, int val, int val1) {
     node *temp, *loc;
     temp = (node *)malloc(sizeof(node));
-    loc = searching(*head, val);
+    // loc = searching(*head, val);
+    
     if (temp == NULL) {
         printf("memory doesn't allocated\n");
         return;

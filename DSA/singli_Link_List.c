@@ -37,8 +37,7 @@ node *search(node *head,int srch){
     printf("No such value found");
     return NULL;
 }
-void insertend(node **head1, int v)
-{
+void insertend(node **head1, int v){
     node *temp, *loc;
     temp = (node *)malloc(sizeof(node));
     if (temp == NULL)
@@ -64,7 +63,7 @@ void insertend(node **head1, int v)
 }
 void insert_after_element(node **head,int val,int srch){
     node *temp,*loc;
-    loc = search(head,srch);
+    loc = search(*head,srch);
     temp=(node *)malloc(sizeof(node));
     if(temp==NULL){
         printf("unable to allocate memory");
@@ -74,8 +73,7 @@ void insert_after_element(node **head,int val,int srch){
     loc->next=temp;
 }
 
-void transversing(node *head)
-{
+void transversing(node *head){
     while (head != NULL)
     {
         printf("%d->", head->info);
@@ -170,7 +168,7 @@ int main()
             printf("Delete after element:");
             scanf("%d",&srch);
             break;
-        case 7:323
+        case 7:  
             printf("Delete entire list");
             dlt_list(&head);
             break;

@@ -1,8 +1,9 @@
 #include<stdio.h>
 int main(){
-    int a[100],n,temp,i,j;
+    int n,temp,i,j;
     printf("Enter the size of array:");
     scanf("%d",&n);
+    int a[n];
     printf("Enter %d integer:",n);
     for(int i=0;i<n;i++){
     scanf("%d",&a[i]);

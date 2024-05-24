@@ -16,7 +16,8 @@ int main(){
             }
         }
     }
+    printf("sorted array ascending order:");
     for(i=0;i<n;i++)
-    printf("sorted array ascending order:%d\t",a[i]);
+    printf("\t%d",a[i]);
     return 0;
 }
