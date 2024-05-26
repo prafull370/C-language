@@ -10,9 +10,9 @@ int main()
 }  
 int fact(int n)  
 {  
-    if (n==0)  
+    if (n==1)  
     {  
-        return;  
+        return ;  
     }  
     else
     {  

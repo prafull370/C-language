@@ -1,10 +1,10 @@
 #include<stdio.h>
 int main(){
     int i,j,s;
-    printf("Enter your array size.");
+    printf("Enter your array size: ");
     scanf("%d",&s);
     int arr[s];
-    printf("Enter your array element:");
+    printf("Enter your array element: ");
     for(i=0;i<s;i++){
         scanf("%d",&arr[i]);
     }
@@ -13,11 +13,17 @@ int main(){
         for(j=i-1;j>=0&&temp<arr[j];j--){
             arr[j+1]=arr[j];
         }
-        arr[j]=temp;
+        arr[j+1]=temp;
+        // j=i-1;
+        // while(j>=0 && arr[j]>temp){
+        //     arr[j+1]=arr[j];
+        //     j--;
+        // }
+        // arr[j+1]=temp;
     }
     printf("Sorting array in ascending order. ");
     for(i=0;i<s;i++){
-        printf("%d",arr[i]);
+        printf("%d ",arr[i]);
     }
     return 0;
 }

@@ -82,9 +82,9 @@ void transversing(node *head){
 }
 
 void  dlt_beg(node **head){
-    if(*head!=NULL ){
-        node *temp;
         temp=*head;
+        node *temp;
+    if(*head!=NULL ){
         *head=(*head)->next;
         free(temp);
     }

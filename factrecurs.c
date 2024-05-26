@@ -21,6 +21,7 @@ int main()
     printf("Enter the number: \n");
     scanf("%d",&n);
     // int f=fact(n);
+    // printf("factorial value is:%d",f);
     printf("factorial value is:%d",fact(n));
     return 0;
 }
