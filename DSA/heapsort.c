@@ -14,7 +14,7 @@ void heapify(int arr[], int N, int i)
     
     if (left < N && arr[left] > arr[largest])
         largest = left;
-    if (right < N && arr[right] > arr[largest])// Swap and continue heapifying
+    if (right < N && arr[right] > arr[largest])
         largest = right;    
     if (largest != i) {
         swap(&arr[i], &arr[largest]);
@@ -23,21 +23,20 @@ void heapify(int arr[], int N, int i)
 }
 void heapSort(int arr[], int N)
 {    
-    for (int i = N / 2 - 1; i >= 0; i--)// Build max heap
+    for (int i = N / 2 - 1; i >= 0; i--)
         heapify(arr, N, i);   
-    for (int i = N - 1; i >= 0; i--) { // Heap sort
+    for (int i = N - 1; i >= 0; i--) { 
         swap(&arr[0], &arr[i]);
         heapify(arr, i, 0);
     }
 }
-void printArray(int arr[], int N)  // A utility function to print array of size n
+void printArray(int arr[], int N)
 {
     for (int i = 0; i < N; i++)
         printf("%d ", arr[i]);
     printf("\n");
 }
 
-// Driver's code
 int main()
 {
     int n;
@@ -47,7 +46,6 @@ int main()
     for(int i=0;i<n;i++){
         scanf("%d",&arr[i]);
     }
-    // int N = sizeof(arr) / sizeof(arr[0]);
     heapSort(arr, n);
     printf("Sorted array is\n");
     printArray(arr, n);
