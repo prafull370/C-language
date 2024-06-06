@@ -1,7 +1,4 @@
-// Circular Queue implementation in C
-
 #include <stdio.h>
-
 #define SIZE 5
 
 int items[SIZE];
@@ -19,7 +16,6 @@ int isEmpty() {
   return 0;
 }
 
-// Adding an element
 void enQueue(int element) {
   if (isFull())
     printf("\n Queue is full!! \n");
@@ -31,7 +27,6 @@ void enQueue(int element) {
   }
 }
 
-// Removing an element
 int deQueue() {
   int element;
   if (isEmpty()) {
@@ -43,8 +38,6 @@ int deQueue() {
       front = -1;
       rear = -1;
     } 
-    // Q has only one element, so we reset the 
-    // queue after dequeing it. ?
     else {
       front = (front + 1) % SIZE;
     }
@@ -53,7 +46,6 @@ int deQueue() {
   }
 }
 
-// Display the queue
 void display() {
   int i;
   if (isEmpty())
@@ -70,28 +62,29 @@ void display() {
 }
 
 int main() {
-  // Fails because front = -1
-  deQueue();
-
-  enQueue(1);
-  enQueue(2);
-  enQueue(3);
-  enQueue(4);
-  enQueue(5);
-
-  // Fails to enqueue because front == 0 && rear == SIZE - 1
-  enQueue(6);
-
-  display();
-  deQueue();
-
-  display();
-
-  enQueue(7);
-  display();
-
-  // Fails to enqueue because front == rear + 1
-  enQueue(8);
-
+  int n,ch;
+  while(1){
+    printf("\n 1.Enter the number in queue.");
+    printf("\n 2.Delete the number in queue.");
+    printf("\n 3 for display.");
+    printf("\n 3 Exit.");
+    printf("\nEnter the your choice.");
+    scanf("%d", &ch);
+    switch(ch){
+      case 1: printf("Enter your number.");
+      scanf("%d", &n);
+      enQueue(n);
+      break;
+      case 2: deQueue(); break;
+      case 3: display(); break;
+      case 4: exit(0); break;
+      default:
+      printf("Invalid choice.");
+    }
+  // enQueue(1);
+  // enQueue(6);
+  // display();
+  // deQueue():
+  }
   return 0;
 }
