@@ -2,9 +2,7 @@
 
 void countingSort(int array[], int size) {
   int output[10];
-
-  // Find the largest element of the array
-  int max = array[0];
+  int max = array[0];// Find the largest element of the array
   for (int i = 1; i < size; i++) {
     if (array[i] > max)
       max = array[i];
