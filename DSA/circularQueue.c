@@ -4,13 +4,11 @@
 int items[SIZE];
 int front = -1, rear = -1;
 
-// Check if the queue is full
 int isFull() {
   if ((front == rear + 1) || (front == 0 && rear == SIZE - 1)) return 1;
   return 0;
 }
 
-// Check if the queue is empty
 int isEmpty() {
   if (front == -1) return 1;
   return 0;
@@ -67,7 +65,7 @@ int main() {
     printf("\n 1.Enter the number in queue.");
     printf("\n 2.Delete the number in queue.");
     printf("\n 3 for display.");
-    printf("\n 3 Exit.");
+    printf("\n 4 Exit.");
     printf("\nEnter the your choice.");
     scanf("%d", &ch);
     switch(ch){
@@ -77,7 +75,7 @@ int main() {
       break;
       case 2: deQueue(); break;
       case 3: display(); break;
-      case 4: exit(0); break;
+      case 4: exit(1); break;
       default:
       printf("Invalid choice.");
     }
@@ -86,5 +84,4 @@ int main() {
   // display();
   // deQueue():
   }
-  return 0;
 }
