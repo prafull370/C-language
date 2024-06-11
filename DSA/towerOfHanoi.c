@@ -14,7 +14,7 @@ void towerOfHanoi(int n, char A, char C, char B)
 int main()
 {
 	int n;
-    printf("Enter the of disk:");
+    printf("Enter the size of disk:");
     scanf("%d",&n);
 	towerOfHanoi(n, 'A', 'C', 'B');
 	return 0;

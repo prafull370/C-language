@@ -7,8 +7,6 @@ typedef struct Node {
     struct Node* next;
 }Node;
 
-// typedef struct Node Node;
-
 void insert(Node** poly, int coef, int exp) {
     Node* temp = (Node*) malloc(sizeof(Node));
     temp->coef = coef;
