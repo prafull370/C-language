@@ -28,14 +28,16 @@ void inorder(node *root){
         inorder(root->right);
     }
 }
+void deleteNode(node* root,int value);
 int main(){
     node *root=NULL;
     int val=0;
     int ch;
     while(1){
         printf("\n1. for insertion");
-        printf("\n2. for inorder");
-        printf("\n3. for Exit.\n");
+        // printf("\n2. for Delete");
+        printf("\n3. for inorder");
+        printf("\n4. for Exit.\n");
         scanf("%d",&ch);
         switch(ch){
             case 1:
@@ -44,9 +46,14 @@ int main(){
                 insert(&root,val);
                 break;
             case 2:
-                inorder(root);
+                printf("Enter value to delete: ");
+                scanf("%d", &value);
+                root = deleteNode(root, value);
                 break;
             case 3:
+                inorder(root);
+                break;
+            case 4:
                 exit(0);
                 break;
             default:
