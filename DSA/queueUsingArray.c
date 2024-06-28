@@ -56,7 +56,7 @@ int main(){
             case 4: exit(1);
             printf("\n");
             break;
-            default: printf("Invalid choice.");
+            default: ("Invalid choice.");
         }
     }
 }
